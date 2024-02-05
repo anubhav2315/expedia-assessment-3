@@ -1,0 +1,21 @@
+// File: src/main/proto/MyService.proto
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc";
+option java_outer_classname = "MyServiceProto";
+
+service MyService {
+    rpc GetData (RequestData) returns (ReplyData);
+}
+
+message RequestData {
+    // Define your request message fields here
+    string requestId = 1;
+}
+
+message ReplyData {
+    // Define your response message fields here
+    string responseData = 1;
+}
